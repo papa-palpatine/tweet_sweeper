@@ -8,7 +8,7 @@ def auth():
     return bearer
 
 def create_url():
-    tweet_fields = "tweet.fields=lang, author_id"
+    tweet_fields = "tweet.fields=lang,author_id"
     ids = "ids=1278747501642657792,1255542774432063488"
     url = "https://api.twitter.com/2/tweets?{}&{}".format(ids, tweet_fields)
     return url
@@ -23,7 +23,7 @@ def connect_to_endpoint(url, headers):
     if response.status_code != 200:
         raise Exception(
             "Request returned an error: {} {}".format(
-                reponse.status_code, response.text
+                response.status_code, response.text
             )
         )
     return response.json()
