@@ -29,6 +29,8 @@ def connect_to_endpoint(url, headers):
         )
     return response.json()
 
+#main
+
 def main():
     bearer_token = auth()
     url = create_url()
